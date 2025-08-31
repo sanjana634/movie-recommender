@@ -43,5 +43,8 @@ def index():
             result = []
             message = "No movies found."
     return render_template("index.html", query = query, results = results, inputed_title = inputed_title) #converts into list
+import os
+
 if __name__ == '__main__':
-    website.run(debug = True) #displays them
+    port = int(os.environ.get('PORT', 5000))
+    website.run(host='0.0.0.0', port=port)
